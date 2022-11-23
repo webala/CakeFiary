@@ -9,10 +9,10 @@ body {
   margin: 0;
 
 
-  --textPrimary: #F7F7F7;
-  --textSecondary: #F2E7D5;
-  --backgroundPrimary: #393E46;
-  --backgroundSecondary: #6D9886;
+  --textPrimary: #594545;
+  --textSecondary: #815B5B;
+  --backgroundPrimary: #FFF8EA;
+  --backgroundSecondary: #684f4f;
 
   background: var(--backgroundPrimary);
   color: var(--textPrimary);
@@ -30,6 +30,7 @@ a {
 
 h1 {
   font-size: 24px;
+  font-weight: 700;
 }
 
 @media (min-width: 700px) {

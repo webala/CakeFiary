@@ -1,10 +1,11 @@
 .banner {
     position: relative;
     display: block;
+    margin-top: 25px;
 
     .image {
         width: 100%;
-        filter: brightness(30%);
+        filter: brightness(40%);
     }
 
     .banner_text {
@@ -12,6 +13,7 @@
         bottom: 0;
         font-size: 11px;
         padding: 0 1.5em;
+        color: var(--backgroundPrimary);
 
         span {
             font-family: 'Pacifico', cursive;;
