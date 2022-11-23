@@ -1,7 +1,13 @@
-.caregory {
+.menu {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    
+    padding: 0 10%;
+}
+.caregory {
+   h1 {
+    font-size: 19px;
+   }
 }
 
 .menu_item {

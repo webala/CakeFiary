@@ -7,9 +7,27 @@ import Footer from '../components/Footer/Footer'
 import Menu from '../components/Menu/Menu'
 import NavBar from '../components/NavBar/NavBar'
 import styles from '../styles/Home.module.css'
+import { AppProps } from 'next/app'
 
+export async function getServerSideProps() {
 
-export default function Home() {
+  console.log('server side propc called')
+  let response = await fetch("http://localhost:8000/bakery/api/categories")
+  const categories = await response.json()
+
+  console.log(categories)
+  response = await fetch("http://localhost:8000/bakery/api/flavours")
+  const flavours = await response.json()
+  
+
+  return {
+    props: {
+      categories,
+      flavours
+    }
+  }
+}
+export default function Home({categories, flavours}: {categories:[], flavours:[]}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +38,7 @@ export default function Home() {
 
       <NavBar/>
       <Banner/>
-      {/* <Menu /> */}
+      <Menu categories={categories} flavours={flavours}/>
       <About />
       <Contact />
       <Footer />

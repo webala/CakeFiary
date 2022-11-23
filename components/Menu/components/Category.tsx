@@ -3,13 +3,19 @@ import style from "../Menu.module.scss"
 import MenuItem from './MenuItem'
 
 
-function Category() {
+function Category({flavours, category}:{flavours:[], category:Object}) {
+
+  const categoryFlavours:Object[] = flavours.filter((flavour:Object) => {
+    return flavour.category.name === category.name
+  })
+
+  
   return (
     <div className={style.caregory}>
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
-        <MenuItem />
+      <h1>Starting @{category.point_five}</h1>
+      {categoryFlavours.map((flavour:Object, index:number) => {
+        return <MenuItem key={index} name={flavour.name}/>
+      })}
     </div>
   )
 }

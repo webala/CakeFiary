@@ -3,13 +3,16 @@ import Category from './components/Category'
 import style from "./Menu.module.scss"
 
 
-function Menu() {
+
+
+function Menu({categories, flavours}: {categories: [], flavours: []}) {
   return (
     <div className={style.menu}>
-        <Category />
-        <Category />
-        <Category />
-        <Category />
+
+      {categories.map((category:Object, index:number) => {
+        return <Category key={index} flavours={flavours} category={category}/>
+      })}
+        
     </div>
   )
 }
