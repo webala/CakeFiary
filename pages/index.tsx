@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About/About'
 import Banner from '../components/Banner/Banner'
+import Contact from '../components/Contact/Contact'
 import Menu from '../components/Menu/Menu'
 import NavBar from '../components/NavBar/NavBar'
 import styles from '../styles/Home.module.css'
@@ -18,8 +19,9 @@ export default function Home() {
 
       <NavBar/>
       <Banner/>
-      <Menu />
+      {/* <Menu /> */}
       <About />
+      <Contact />
     </div>
   )
 }

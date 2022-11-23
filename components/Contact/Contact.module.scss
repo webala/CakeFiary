@@ -1,0 +1,46 @@
+.contact {
+    padding: 0 10%;
+    margin-bottom: 100px;
+
+    .heading {
+        margin-bottom: 20px;
+    }
+
+    .input_field {
+        display: flex;
+        flex-direction: column;
+
+        input, textarea {
+            height: 35px;
+            border: 2px solid var(--backgroundSecondary);
+            border-radius: 5px;
+            color: var(--backgroundPrimary);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+        }
+    }
+
+    .submit_container {
+        display: flex;
+        justify-content: flex-start;
+        margin: 40px 0;
+
+        button {
+            background: var(--backgroundSecondary);
+            padding: .5rem 2rem;
+            border-radius: 5px;
+            color: var(--backgroundPrimary)
+        }
+    }
+
+    @media (min-width: 700px) {
+        width: 70%;
+    }
+
+}

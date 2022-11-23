@@ -28,4 +28,14 @@ a {
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+@media (min-width: 700px) {
+  h1 {
+    font-size: 32px;
+  }
+}
+
 
