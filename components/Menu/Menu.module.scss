@@ -1,0 +1,24 @@
+.caregory {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.menu_item {
+    display: flex;
+    align-items: center;
+
+    .item_details {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+
+        .item_name {
+            margin-right: .5rem;
+        }
+
+        .item_price {
+            color: var(--textSecondary);
+        }
+    }
+}

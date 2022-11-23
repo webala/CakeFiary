@@ -1,14 +1,15 @@
 import React from 'react'
 import style from './NavBar.module.scss'
 import {BsInfoCircle, BsTelephone, BsCart, BsSearch}  from 'react-icons/bs'
+import {CgMenuBoxed} from 'react-icons/cg'
 
 
 function NavBar() {
   return (
     <div className={style.navbar}>
         <div className={style.nav_item}>
-            <p>About</p>
-            <BsInfoCircle className='md:hover:animate-bounce'/>
+            <p>Menu</p>
+            <CgMenuBoxed className='md:hover:animate-bounce'/>
         </div>
         <div className={style.nav_item}>
             <p>Contact</p>
