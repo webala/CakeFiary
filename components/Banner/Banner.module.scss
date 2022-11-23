@@ -1,34 +1,39 @@
 .banner {
-    position: relative;
-    display: block;
-    margin-top: 25px;
+  position: relative;
+  display: block;
+  margin-top: 25px;
 
-    .image {
-        width: 100%;
-        filter: brightness(40%);
+  .image {
+    width: 100%;
+    filter: brightness(40%);
+  }
+
+  .fairy {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .banner_text {
+    position: absolute;
+    bottom: 0;
+    font-size: 11px;
+    padding: 0 1.5em;
+    color: var(--backgroundPrimary);
+
+    span {
+      font-family: "Pacifico", cursive;
     }
+  }
 
+  @media (min-width: 700px) {
     .banner_text {
-        position: absolute;
-        bottom: 0;
-        font-size: 11px;
-        padding: 0 1.5em;
-        color: var(--backgroundPrimary);
-
-        span {
-            font-family: 'Pacifico', cursive;;
-        }
+      font-size: 16px;
     }
+  }
 
-    @media (min-width: 700px) {
-        .banner_text{
-            font-size: 16px;
-        }
+  @media (min-width: 1080px) {
+    .banner_text {
+      font-size: 20px;
     }
-
-    @media (min-width: 1080px) {
-        .banner_text{
-            font-size: 20px;
-        }
-    }
+  }
 }

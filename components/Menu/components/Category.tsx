@@ -12,10 +12,13 @@ function Category({flavours, category}:{flavours:[], category:Object}) {
   
   return (
     <div className={style.caregory}>
-      <h1>Starting @{category.point_five}</h1>
-      {categoryFlavours.map((flavour:Object, index:number) => {
-        return <MenuItem key={index} name={flavour.name}/>
-      })}
+      <h1>{category.name}</h1>
+      <sub>Starting from @{category.point_five}</sub>
+      <div>
+        {categoryFlavours.map((flavour:Object, index:number) => {
+          return <MenuItem key={index} name={flavour.name}/>
+        })}
+      </div>
     </div>
   )
 }
