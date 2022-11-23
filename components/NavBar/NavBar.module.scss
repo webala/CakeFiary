@@ -1,0 +1,37 @@
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem 0;
+
+    .nav_item {
+        display: flex;
+        align-items: center;
+
+        p {
+            display: none;
+            margin: 0 .5em;
+        }
+    }
+
+    .heading {
+        h1 {
+            font-size: 24px;
+            font-family: 'Pacifico', cursive;;
+        }
+    }
+
+    @media (min-width: 700px) {
+        .nav_item {
+            p {
+                display: block;
+            }
+        }
+
+        .heading {
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }
+}
