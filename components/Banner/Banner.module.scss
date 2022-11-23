@@ -1,0 +1,32 @@
+.banner {
+    position: relative;
+    display: block;
+
+    .image {
+        width: 100%;
+        filter: brightness(20%);
+    }
+
+    .banner_text {
+        position: absolute;
+        bottom: 0;
+        font-size: 11px;
+        padding: 0 1.5em;
+
+        span {
+            font-family: 'Pacifico', cursive;;
+        }
+    }
+
+    @media (min-width: 700px) {
+        .banner_text{
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: 1080px) {
+        .banner_text{
+            font-size: 20px;
+        }
+    }
+}
