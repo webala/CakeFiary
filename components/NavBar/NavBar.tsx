@@ -4,6 +4,7 @@ import {BsInfoCircle, BsTelephone, BsCart, BsSearch, BsFacebook, BsInstagram}  f
 import {CgMenuBoxed} from 'react-icons/cg'
 import Link from 'next/link'
 import { FiTwitter } from 'react-icons/fi'
+import {GiFairyWand} from 'react-icons/gi'
 
 
 function NavBar() {
@@ -20,6 +21,7 @@ function NavBar() {
             </div>
             <div className={style.heading}>
                 <h1>Cake Fairy</h1>
+                <GiFairyWand />
             </div>
             <div className={`${style.nav_item} group`}>
                 <p>Cart</p>

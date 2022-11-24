@@ -1,17 +1,38 @@
-import React from 'react'
-import style from './Banner.module.scss'
-import Image from 'next/image'
-import breadsImage from '../../public/breads.jpg'
-import fairy from '../../public/fairy.png'
+import React from "react";
+import style from "./Banner.module.scss";
+import Image from "next/image";
+import breadsImage from "../../public/breads.jpg";
+import fairy2 from "../../public/fairy2.png";
+
+import cake from "../../public/Cake.png";
 
 function Banner() {
   return (
     <div className={style.banner}>
-        <Image className={style.image} src={breadsImage} alt="banner" layout='intrinsic'/>
-        {/* <Image className={style.fairy} alt='fairy' src={fairy} width={500} height={500}/> */}
-        <p className={style.banner_text}>"You don't have to love cooking to cook, but you have to do more than love baking to bake. You have to bake out of love." <span> ~Tom Junod</span> </p>
+      <Image
+        src={breadsImage}
+        alt="banner"
+        layout="intrinsic"
+        className={style.image}
+      />
+      <div className={style.fairy_container}>
+        <Image
+          src={cake}
+          width={300}
+          height={100}
+          alt="fairy"
+          className={style.cake}
+        />
+        <Image
+          src={fairy2}
+          width={300}
+          height={300}
+          alt="fairy"
+          className={style.fairy}
+        />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Banner
+export default Banner;

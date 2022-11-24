@@ -23,9 +23,12 @@
 
         .heading {
         cursor: pointer;
+        display: flex;
+        align-items: center;
+
         h1 {
             font-family: "Pacifico", cursive;
-        }
+            }
         }
 
         @media (min-width: 700px) {

@@ -16,8 +16,12 @@
         }
 
         @media (min-width: 1080px) {
-            gap: 70px
+            gap: 70px;
         }
+    }
+
+    @media (min-width: 700px) {
+        padding: 0 10%;
     }
 }
 
