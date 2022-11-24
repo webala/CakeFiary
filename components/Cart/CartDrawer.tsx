@@ -5,8 +5,7 @@ import {
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
-  useDisclosure
+  DrawerCloseButton
 } from "@chakra-ui/react";
 
 import Cart from "./components/Cart";
