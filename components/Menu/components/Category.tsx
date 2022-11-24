@@ -16,7 +16,7 @@ function Category({flavours, category}:{flavours:[], category:Object}) {
       <sub>Starting from ksh {category.point_five}</sub>
       <div>
         {categoryFlavours.map((flavour:Object, index:number) => {
-          return <MenuItem key={index} name={flavour.name}/>
+          return <MenuItem key={index} name={flavour.name} id={flavour.id}/>
         })}
       </div>
     </div>

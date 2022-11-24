@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import style from './NavBar.module.scss'
 import {BsInfoCircle, BsTelephone, BsCart, BsSearch, BsFacebook, BsInstagram}  from 'react-icons/bs'
 import {CgMenuBoxed} from 'react-icons/cg'
 import Link from 'next/link'
 import { FiTwitter } from 'react-icons/fi'
 import {GiFairyWand} from 'react-icons/gi'
+import Cart from '../Cart/Cart'
+import {useDisclosure} from '@chakra-ui/react'
 
 
 function NavBar() {
+
+    const btnRef = useRef()
+    const {onOpen, isOpen, onClose} = useDisclosure()
   return (
     <div className={style.navbar_container}>
         <div className={style.navbar}>
@@ -23,10 +28,10 @@ function NavBar() {
                 <h1>Cake Fairy</h1>
                 <GiFairyWand />
             </div>
-            <div className={`${style.nav_item} group`}>
+            <button className={`${style.nav_item} group`} ref={btnRef} onClick={onOpen}>
                 <p>Cart</p>
                 <BsCart className='md:group-hover:animate-bounce'/>
-            </div>
+            </button>
             <div className={`${style.nav_item} group`}>
                 <p>Search</p>
                 <BsSearch className='md:group-hover:animate-bounce'/>
@@ -37,6 +42,7 @@ function NavBar() {
             <Link href="#" className='hover:animate-bounce'><BsInstagram /></Link>
             <Link href="#" className='hover:animate-bounce'><FiTwitter /></Link>
         </div>
+        <Cart btnRef={btnRef} isOpen={isOpen} onClose={onClose}/>
     </div>
   )
 }

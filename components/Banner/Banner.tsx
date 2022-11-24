@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Banner.module.scss";
 import Image from "next/image";
-import breadsImage from "../../public/breads.jpg";
+import breadsImage from "../../public/5675806.jpg";
 import fairy2 from "../../public/fairy2.png";
 
 import cake from "../../public/Cake.png";
