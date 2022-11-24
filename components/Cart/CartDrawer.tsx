@@ -9,7 +9,9 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 
-function Cart({btnRef, isOpen, onClose}) {
+import Cart from "./components/Cart";
+
+function CartDrawer({btnRef, isOpen, onClose}) {
   return (
     <>
       <Drawer
@@ -17,14 +19,15 @@ function Cart({btnRef, isOpen, onClose}) {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
+        size="lg"
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>Create your account</DrawerHeader>
 
-          <DrawerBody>
-            <input placeholder="Type here..." />
+          <DrawerBody >
+            <Cart />
           </DrawerBody>
 
           <DrawerFooter>
@@ -40,4 +43,4 @@ function Cart({btnRef, isOpen, onClose}) {
 }
 
 
-export default Cart
+export default CartDrawer
