@@ -1,72 +1,86 @@
 .menu_container {
-    padding: 0 20%;
-    margin-top: 100px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .menu {
+    @media (min-width: 768px) {
+        margin-top: 100px;
+    }
+
+    .title {
+        font-weight: 700;
+        font-size: 24px;
+        margin-bottom: 20px;
+
+        @media (min-width: 768px) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .flavours {
+
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        margin-top: 50px;
-        width: 100%;
-
-        @media (min-width: 700px) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px
-        }
-
-        @media (min-width: 1080px) {
-            gap: 70px;
-        }
-    }
-
-    @media (min-width: 700px) {
-        padding: 0 10%;
-    }
-}
-
-
-.caregory {
-    margin: 20px 0;
-    h1 {
-        font-size: 14px;
-        border-bottom: 1px solid var(--textPrimary);
-        padding-bottom: 10px;
-    }
-
-    sub {
-        color: var(--textSecondary)
-    }
-
-    @media (min-width: 700px) {
-       h1 {
-        font-size: 20px;
-       }
-    }
-}
-
-.menu_item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 5px 0;
-
-    .item_details {
-        display: flex;
         align-items: center;
-        margin-right: 2rem;
+        gap: 20px;
 
-        .item_name {
-            margin-right: .5rem;
+        @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
         }
 
-        .item_price {
-            color: var(--textSecondary);
+        @media (min-width: 1028px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
-    }
 
-    .add_to_cart {
-        cursor: pointer;
-        margin-left: 20px;
+        .flavour {
+            border: 1px solid var(--lightOrange);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 16px;
+            width: fit-content;
+
+            .image {
+                width: 150px;
+                border-radius: 16px;
+                margin-bottom: 10px;
+            }
+
+            .name {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 10px;
+                margin-bottom: 10px;
+
+                h1 {
+                    font-weight: 600;
+                }
+
+                .icon {
+                    color: var(--lightOrange);
+                    cursor: pointer;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+                font-size: 14px;
+                span {
+                    color: var(--lightOrange);
+                }
+            }
+
+            button {
+                background: var(--darkGreen);
+                padding: 5px 10px;
+                border-radius: 16px;
+                color: white;
+            }
+        }
     }
 }
