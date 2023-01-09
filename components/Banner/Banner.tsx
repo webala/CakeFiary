@@ -2,36 +2,19 @@ import React from "react";
 import style from "./Banner.module.scss";
 import Image from "next/image";
 import bg from "../../public/breads.jpg";
-import { GiFairyWand } from "react-icons/gi";
+import { GrFormNextLink } from "react-icons/gr";
 
 function Banner() {
 	return (
 		<div className={style.banner}>
-			<Image src={bg} alt="banner" width={2000} className={style.image} />
-
-			<div className={style.banner_text}>
-				<div className={style.heading}>
-					<h1>Cake Fairy</h1>
-					<GiFairyWand />
-				</div>
-        <p></p>
-			</div>
-			{/* <div className={style.fairy_container}>
-        <Image
-          src={cake}
-          width={300}
-          height={100}
-          alt="fairy"
-          className={style.cake}
-        />
-        <Image
-          src={fairy2}
-          width={300}
-          height={300}
-          alt="fairy"
-          className={style.fairy}
-        />
-      </div> */}
+			<h1>Memorable Taste Made With Love</h1>
+			<p>
+				The perfect cake everytime speciaally for you from our oven to yout door.
+			</p>
+      <button>
+        <p>Order Now</p>
+        <GrFormNextLink className={style.icon} />
+      </button>
 		</div>
 	);
 }

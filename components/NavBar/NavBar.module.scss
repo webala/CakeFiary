@@ -23,6 +23,8 @@
 				@media (min-width: 768px) {
 					display: inline;
                     margin-right: 5px;
+                    font-size: 17px;
+                    font-weight: 600;
 				}
 			}
 
@@ -45,8 +47,12 @@
 
             h1 {
                 font-weight: 600;
-                font-size: 24px;
+                font-size: 19px;
                 font-family: "Pacifico", cursive;
+
+                @media (min-width: 768px) {
+                    font-size: 24px;
+                }
             }
         }
 	}
