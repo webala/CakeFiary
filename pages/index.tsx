@@ -7,7 +7,7 @@ import Footer from '../components/Footer/Footer'
 import Menu from '../components/Menu/Menu'
 import NavBar from '../components/NavBar/NavBar'
 import styles from '../styles/Home.module.css'
-import { AppProps } from 'next/app'
+
 
 export async function getServerSideProps() {
 
@@ -36,7 +36,7 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
         <link rel="icon" href="/fairy1.png" />
       </Head>
 
-      <NavBar/>
+      <NavBar categories={categories} flavours={flavours}/>
       <Banner/>
       <Menu categories={categories} flavours={flavours}/>
       <About />

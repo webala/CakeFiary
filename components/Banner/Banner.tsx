@@ -1,21 +1,22 @@
 import React from "react";
 import style from "./Banner.module.scss";
 import Image from "next/image";
-import breadsImage from "../../public/5675806.jpg";
-import fairy2 from "../../public/fairy2.png";
-
-import cake from "../../public/Cake.png";
+import bg from "../../public/breads.jpg";
+import { GiFairyWand } from "react-icons/gi";
 
 function Banner() {
-  return (
-    <div className={style.banner}>
-      <Image
-        src={breadsImage}
-        alt="banner"
-        layout="intrinsic"
-        className={style.image}
-      />
-      <div className={style.fairy_container}>
+	return (
+		<div className={style.banner}>
+			<Image src={bg} alt="banner" width={2000} className={style.image} />
+
+			<div className={style.banner_text}>
+				<div className={style.heading}>
+					<h1>Cake Fairy</h1>
+					<GiFairyWand />
+				</div>
+        <p></p>
+			</div>
+			{/* <div className={style.fairy_container}>
         <Image
           src={cake}
           width={300}
@@ -30,9 +31,9 @@ function Banner() {
           alt="fairy"
           className={style.fairy}
         />
-      </div>
-    </div>
-  );
+      </div> */}
+		</div>
+	);
 }
 
 export default Banner;

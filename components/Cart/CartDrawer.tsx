@@ -10,7 +10,15 @@ import {
 
 import Cart from "./components/Cart";
 
-function CartDrawer({btnRef, isOpen, onClose}) {
+interface iCartDrawerProps {
+  btnRef: React.RefObject<HTMLButtonElement>;
+  isOpen: boolean;
+  onClose: Function;
+  categories: object[];
+  flavours: object[];
+}
+
+function CartDrawer({btnRef, isOpen, onClose, categories, flavours}: iCartDrawerProps) {
   return (
     <>
       <Drawer
@@ -26,7 +34,7 @@ function CartDrawer({btnRef, isOpen, onClose}) {
           <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody >
-            <Cart />
+            <Cart categories={categories} flavours={flavours}/>
           </DrawerBody>
 
           <DrawerFooter>

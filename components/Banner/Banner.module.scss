@@ -1,54 +1,65 @@
 .banner {
-  position: relative;
-  display: block;
-  margin-top: 25px;
+	position: relative;
+	display: block;
+	// padding-bottom: 200px;
+	background: linear-gradient(90deg, rgb(27, 8, 11), black);
 
-  .image {
-    width: 100%;
-    filter: brightness(70%);
-  }
+	.image {
+		width: 100%;
+		filter: brightness(40%);
+	}
 
+	.fairy_container {
+		position: absolute;
+		bottom: 0;
+		z-index: 100;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-  .fairy_container {
-    position: absolute;   
-    bottom: 0;
-    z-index: 100;
-    width: 100%;
+		.fairy {
+			width: 20%;
+		}
+
+		.cake {
+			width: 10%;
+			height: 10%;
+		}
+	}
+
+	.banner_text {
+		position: absolute;
+		top: 5%;
+		width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+		padding: 0 1.5em;
+		color: var(--backgroundPrimary);
 
-    .fairy {
-        width: 20%;
-    }
+		span {
+			font-family: "Pacifico", cursive;
+		}
 
-    .cake {
-        width: 10%;
-        height: 10%;
-    }
-  }
-
-  .banner_text {
-    position: absolute;
-    bottom: 0;
-    font-size: 11px;
-    padding: 0 1.5em;
-    color: var(--backgroundPrimary);
-
-    span {
+    .heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: "Pacifico", cursive;
+      font-size: 24px;
     }
-  }
+	}
 
-  @media (min-width: 700px) {
-    .banner_text {
-      font-size: 16px;
-    }
-  }
+	@media (min-width: 700px) {
+		.banner_text {
+			font-size: 16px;
+		}
+	}
 
-  @media (min-width: 1080px) {
-    .banner_text {
-      font-size: 20px;
-    }
-  }
+	@media (min-width: 1080px) {
+		.banner_text {
+			font-size: 20px;
+		}
+	}
 }

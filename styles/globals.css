@@ -9,10 +9,9 @@ body {
   margin: 0;
 
 
-  --textPrimary: #594545;
-  --textSecondary: #815B5B;
-  --backgroundPrimary: #FFF8EA;
-  --backgroundSecondary: #684f4f;
+  --lightGreen: #3d4f50;
+  --darkGreen: #0a3638;
+  --lightOrange: #b36a2f;
 
   background: var(--backgroundPrimary);
   color: var(--textPrimary);
@@ -26,6 +25,7 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: 'Space Mono', monospace;
 }
 
 h1 {
