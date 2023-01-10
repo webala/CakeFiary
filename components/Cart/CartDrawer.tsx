@@ -20,32 +20,33 @@ interface iCartDrawerProps {
 
 function CartDrawer({btnRef, isOpen, onClose, categories, flavours}: iCartDrawerProps) {
   return (
-    <>
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        size="lg"
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+    <></>
+    // <>
+    //   <Drawer
+    //     isOpen={isOpen}
+    //     placement="right"
+    //     onClose={onClose}
+    //     finalFocusRef={btnRef}
+    //     size="lg"
+    //   >
+    //     <DrawerOverlay />
+    //     <DrawerContent>
+    //       <DrawerCloseButton />
+    //       <DrawerHeader>Create your account</DrawerHeader>
 
-          <DrawerBody >
-            <Cart categories={categories} flavours={flavours}/>
-          </DrawerBody>
+    //       <DrawerBody >
+    //         <Cart categories={categories} flavours={flavours}/>
+    //       </DrawerBody>
 
-          <DrawerFooter>
-            <button  onClick={onClose}>
-              Cancel
-            </button>
-            <button>Save</button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
+    //       <DrawerFooter>
+    //         <button  onClick={onClose}>
+    //           Cancel
+    //         </button>
+    //         <button>Save</button>
+    //       </DrawerFooter>
+    //     </DrawerContent>
+    //   </Drawer>
+    // </>
   );
 }
 

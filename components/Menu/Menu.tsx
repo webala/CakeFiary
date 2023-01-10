@@ -5,8 +5,7 @@ import Image from "next/image";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import flavours from '../../data'
 
-function Menu({ categories }: { categories: []; flavours: [] }) {
-	console.log("flavours: ", flavours);
+function Menu() {
 	return (
 		<div className={style.menu_container}>
 			<AnimationOnScroll animateIn="animate__shakeX">
@@ -14,9 +13,9 @@ function Menu({ categories }: { categories: []; flavours: [] }) {
 			</AnimationOnScroll>
 
 			<div className={style.flavours}>
-				{flavours.map((flavour) => {
+				{flavours.map((flavour, index) => {
 					return (
-						<div className={style.flavour}>
+						<div className={style.flavour} key={index}>
 							<AnimationOnScroll animateIn="animate__fadeInBottomLeft">
 								<Image
 									src={flavour.image}

@@ -49,9 +49,9 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
         <link rel="icon" href="/fairy1.png" />
       </Head>
 
-      <NavBar categories={categories} flavours={flavours}/>
+      <NavBar />
       <Banner/>
-      <Menu categories={categories} flavours={flavours}/>
+      <Menu/>
 
       <Subscribe />
       {/* <BestSellers bestSellers={bestSellers}/> */}

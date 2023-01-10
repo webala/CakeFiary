@@ -13,10 +13,10 @@ import Link from "next/link";
 import { FiTwitter } from "react-icons/fi";
 import { GiFairyWand } from "react-icons/gi";
 import {AiOutlineInfoCircle, AiOutlineHome} from 'react-icons/ai'
-import CartDrawer from "../Cart/CartDrawer";
+// import CartDrawer from "../Cart/CartDrawer";
 import { useDisclosure } from "@chakra-ui/react";
 
-function NavBar({ categories, flavours }: { categories: []; flavours: [] }) {
+function NavBar() {
 	const btnRef = useRef<HTMLButtonElement>(null);
 
 	const { onOpen, isOpen, onClose } = useDisclosure();
@@ -67,13 +67,13 @@ function NavBar({ categories, flavours }: { categories: []; flavours: [] }) {
 					<FiTwitter className={style.icon}/>
 				</Link>
 			</div>
-			<CartDrawer
+			{/* <CartDrawer
 				btnRef={btnRef}
 				isOpen={isOpen}
 				onClose={onClose}
 				categories={categories}
 				flavours={flavours}
-			/>
+			/> */}
 		</div>
 	);
 }
