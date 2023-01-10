@@ -6,6 +6,7 @@ import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Menu from '../components/Menu/Menu'
 import NavBar from '../components/NavBar/NavBar'
+import Subscribe from '../components/Subscribe/Subscribe'
 import styles from '../styles/Home.module.css'
 
 
@@ -39,6 +40,8 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
       <NavBar categories={categories} flavours={flavours}/>
       <Banner/>
       <Menu categories={categories} flavours={flavours}/>
+
+      <Subscribe />
       <About />
       <Contact />
       <Footer />
