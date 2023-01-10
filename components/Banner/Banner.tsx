@@ -9,8 +9,7 @@ function Banner() {
 		<div className={style.banner}>
 			<h1>Memorable Taste Made With Love</h1>
 			<p>
-				The perfect cake everytime speciaally for you from our oven to yout
-				door.
+				The perfect cake everytime specially for you from our oven to your door.
 			</p>
 			<button>
 				<p>Order Now</p>

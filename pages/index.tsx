@@ -2,12 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About/About'
 import Banner from '../components/Banner/Banner'
+import BestSellers from '../components/BestSellers/BestSellers'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Menu from '../components/Menu/Menu'
 import NavBar from '../components/NavBar/NavBar'
 import Subscribe from '../components/Subscribe/Subscribe'
 import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react'
 
 
 export async function getServerSideProps() {
@@ -29,6 +31,14 @@ export async function getServerSideProps() {
 }
 
 export default function Home({categories, flavours}: {categories:[], flavours:[]}) {
+
+  
+  // const [bestSellers, setBestSellets] = useState([])
+
+  // useEffect(() => {
+  //   setBestSellets([flavours[4], flavours[0], flavours[3] ])
+  // }, [])
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -42,6 +52,7 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
       <Menu categories={categories} flavours={flavours}/>
 
       <Subscribe />
+      {/* <BestSellers bestSellers={bestSellers}/> */}
       <About />
       <Contact />
       <Footer />

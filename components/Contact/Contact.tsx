@@ -20,7 +20,7 @@ function Contact() {
 	};
 	return (
 		<div className={style.contact_container} id="contact">
-			<AnimationOnScroll animateIn="animate__wobble">
+			<AnimationOnScroll animateIn="animate__shakeX">
 				<h1 className={style.heading}>Contact Me</h1>
 			</AnimationOnScroll>
 			<div className={style.contact}>
