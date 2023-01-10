@@ -39,7 +39,6 @@ export default function Home() {
   //   setBestSellets([flavours[4], flavours[0], flavours[3] ])
   // }, [])
 
-  console.log('flavours: ', flavours)
   
   return (
     <div className={styles.container}>
