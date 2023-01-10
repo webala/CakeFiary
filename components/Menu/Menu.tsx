@@ -3,8 +3,9 @@ import Category from "./components/Category";
 import style from "./Menu.module.scss";
 import Image from "next/image";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import flavours from '../../data'
 
-function Menu({ categories, flavours }: { categories: []; flavours: [] }) {
+function Menu({ categories }: { categories: []; flavours: [] }) {
 	console.log("flavours: ", flavours);
 	return (
 		<div className={style.menu_container}>
@@ -32,7 +33,7 @@ function Menu({ categories, flavours }: { categories: []; flavours: [] }) {
 							</div>
 
 							<p>
-								Starting @ ksh <span> {flavour.category.point_five}</span>
+								Starting @ ksh <span> 800</span>
 							</p>
 
 							<AnimationOnScroll animateIn="animate__heartBeat" delay={1000}>

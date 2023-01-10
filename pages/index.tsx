@@ -38,6 +38,8 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
   // useEffect(() => {
   //   setBestSellets([flavours[4], flavours[0], flavours[3] ])
   // }, [])
+
+  console.log('flavours: ', flavours)
   
   return (
     <div className={styles.container}>
