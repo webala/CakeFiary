@@ -1,13 +1,57 @@
 .about {
-    padding: 100px 10%;
-    margin: 100px 0;
-    
+	padding: 100px 20px;
+	margin: 100px 0;
+    display: flex;
+    flex-direction: column-reverse;
 
-    
-    p {
-        line-height: 23px;
-        margin: 15px 0;
-        text-align: justify;
+    @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
     }
-   
+
+    @media (min-width: 1028px) {
+        padding: 200px 150px;
+        gap: 40px;
+    }
+
+	.our_story {
+        margin: 50px 0;
+		.heading {
+			font-size: 24px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+        @media (min-width: 768px) {
+            margin: 0;
+        }
+	}
+
+	.images {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(100px, 200px));
+        gap: 10px;
+
+        .item {
+            border-radius: 16px;
+        }
+
+        .item1 {
+            grid-column: span 2;
+        }
+
+        .item2 {
+            height: 100%;
+            object-fit: cover;
+        }
+        .item4 {
+            grid-column: span 2;
+        }
+
+        .item3 {
+            height: 100%;
+            object-fit: cover;
+        }
+	}
 }
