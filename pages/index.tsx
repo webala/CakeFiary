@@ -12,25 +12,25 @@ import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react'
 
 
-export async function getServerSideProps() {
+// export async function getServerSideProps() {
 
   
-  let response = await fetch("http://localhost:8000/bakery/api/categories")
-  const categories = await response.json()
+//   let response = await fetch("http://localhost:8000/bakery/api/categories")
+//   const categories = await response.json()
 
-  response = await fetch("http://localhost:8000/bakery/api/flavours")
-  const flavours = await response.json()
+//   response = await fetch("http://localhost:8000/bakery/api/flavours")
+//   const flavours = await response.json()
   
 
-  return {
-    props: {
-      categories,
-      flavours
-    }
-  }
-}
+//   return {
+//     props: {
+//       categories,
+//       flavours
+//     }
+//   }
+// }
 
-export default function Home({categories, flavours}: {categories:[], flavours:[]}) {
+export default function Home() {
 
   
   // const [bestSellers, setBestSellets] = useState([])
