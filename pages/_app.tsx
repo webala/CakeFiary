@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import { AppWrapper } from "../context/AppContext";
+
 import "animate.css/animate.min.css";
 
 export default function App({ Component, pageProps }: AppProps) {
