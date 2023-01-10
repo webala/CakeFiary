@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import About from '../components/About/About'
 import Banner from '../components/Banner/Banner'
-import BestSellers from '../components/BestSellers/BestSellers'
+
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 import Menu from '../components/Menu/Menu'
@@ -54,7 +54,7 @@ export default function Home({categories, flavours}: {categories:[], flavours:[]
       <Menu/>
 
       <Subscribe />
-      {/* <BestSellers bestSellers={bestSellers}/> */}
+      
       <About />
       <Contact />
       <Footer />
