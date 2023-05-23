@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useState } from "react";
-import { Flavour } from "../../types";
+import { Flavour, AddOn } from "../../types";
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { fetchFlavours } from "../../utils";
+import { fetchAddons, fetchFlavours } from "../../utils";
 import { Spinner, useToast } from "@chakra-ui/react";
 import axios from "axios";
 
@@ -11,6 +11,7 @@ function AddCake() {
    const [name, setName] = useState<string>();
    const [price, setPrice] = useState<number>();
    const [flavours, setFlavours] = useState<Flavour[]>([]);
+   const [availableAddons, setAvailableAddons] = useState<AddOn[]>([]);
 
    const toast = useToast();
    const queryClient = useQueryClient();
@@ -21,24 +22,20 @@ function AddCake() {
             name,
             price,
             flavours,
-            availableAddons: [],
+            availableAddons
          };
 
-         const response = await axios.post(
-            "http://localhost:8000/cake",
-            data,
-            {
-               headers: {
-                  "Content-Type": "application/json",
-               },
-            }
-         );
+         const response = await axios.post("http://localhost:8000/cake", data, {
+            headers: {
+               "Content-Type": "application/json",
+            },
+         });
          return response.data;
       },
       {
          onSuccess: () => {
             toast({
-               title: "Flavour added.",
+               title: "Cake added.",
                status: "success",
                duration: 9000,
                isClosable: true,
@@ -48,7 +45,7 @@ function AddCake() {
          },
          onError: () => {
             toast({
-               title: "Unable to add flavour.",
+               title: "Unable to add cake.",
                status: "error",
                duration: 9000,
                isClosable: true,
@@ -65,17 +62,31 @@ function AddCake() {
       isError: flavoursIsError,
       error: flavoursError,
    } = useQuery(["flavours"], fetchFlavours);
+
+   const {
+      data: addOnChoices,
+      isLoading: addOnsIsLoading,
+      isSuccess: addOnsisSuccess,
+      isError: addOnsIsError,
+      error: addOnsError,
+   } = useQuery(["addons"], fetchAddons);
    console.log(flavours);
    return (
       <div>
-         <form onSubmit={(e) => {
-            e.preventDefault()
-            addCakeMutation.mutate()
-         }}>
+         <form
+            onSubmit={(e) => {
+               e.preventDefault();
+               addCakeMutation.mutate();
+            }}
+         >
             <h1 className="heading">Add cake</h1>
             <div className="field">
                <label htmlFor="">Name</label>
-               <input required type="text" onChange={(e) => setName(e.target.value)} />
+               <input
+                  required
+                  type="text"
+                  onChange={(e) => setName(e.target.value)}
+               />
             </div>
             <div className="field">
                <label htmlFor="">Price</label>
@@ -85,10 +96,11 @@ function AddCake() {
                   onChange={(e) => setPrice(parseInt(e.target.value))}
                />
             </div>
-            <h2 className="sub-heading">Select flavours</h2>
+
             {flavoursIsLoading && <Spinner color="red.500" />}
             {flavoursisSuccess ? (
                <>
+                  <h2 className="sub-heading">Select flavours</h2>
                   {flavourChoices.map((flavour: Flavour, index: number) => (
                      <div key={index} className="field checkbox">
                         <label>{flavour.name}</label>
@@ -113,8 +125,42 @@ function AddCake() {
                   ))}
                </>
             ) : null}
+
+            {addOnsIsLoading && <Spinner color="red.500" />}
+            {addOnsisSuccess ? (
+               <>
+                  <h2 className="sub-heading">Select addons</h2>
+                  {addOnChoices.map((addon: AddOn, index: number) => (
+                     <div key={index} className="field checkbox">
+                        <label>{addon.name} @{addon.price}</label>
+                        <input
+                           type="checkbox"
+                           onClick={(e) => {
+                              const selected = availableAddons.find(
+                                 (item) => item._id === addon._id
+                              );
+                              if (selected) {
+                                 setAvailableAddons(
+                                    availableAddons.filter(
+                                       (item) => item._id !== addon._id
+                                    )
+                                 );
+                              } else {
+                                 setAvailableAddons([
+                                    ...availableAddons,
+                                    addon,
+                                 ]);
+                              }
+                           }}
+                        />
+                     </div>
+                  ))}
+               </>
+            ) : null}
             <div className="actions">
-               <button className="submit" type="submit">Add cake</button>
+               <button className="submit" type="submit">
+                  Add cake
+               </button>
             </div>
          </form>
       </div>
