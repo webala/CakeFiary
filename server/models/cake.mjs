@@ -20,6 +20,10 @@ const cakeShema = new Schema({
       type: Array,
       requered: true,
    },
+   cakeImage: {
+      type: String,
+      requered: true,
+   },
 });
 
 const cakeModel = mongoose.model("Cake", cakeShema);

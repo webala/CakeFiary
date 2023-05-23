@@ -12,22 +12,23 @@ function AddCake() {
    const [price, setPrice] = useState<number>();
    const [flavours, setFlavours] = useState<Flavour[]>([]);
    const [availableAddons, setAvailableAddons] = useState<AddOn[]>([]);
+   const [cakeImage, setCakeImage] = useState<Blob>();
 
    const toast = useToast();
    const queryClient = useQueryClient();
 
    const addCakeMutation = useMutation(
       async () => {
-         const data = {
-            name,
-            price,
-            flavours,
-            availableAddons
-         };
+         let data = new FormData()
+         data.append('name', name as string)
+         data.append('price', price?.toString() as string)
+         data.append('flavours', JSON.stringify(flavours))
+         data.append('availableAddons', JSON.stringify(availableAddons))
+         data.append('cakeImage', cakeImage as Blob, cakeImage?.name)
 
          const response = await axios.post("http://localhost:8000/cake", data, {
             headers: {
-               "Content-Type": "application/json",
+               "Content-Type": "multipart/form-data",
             },
          });
          return response.data;
@@ -70,7 +71,7 @@ function AddCake() {
       isError: addOnsIsError,
       error: addOnsError,
    } = useQuery(["addons"], fetchAddons);
-   console.log(flavours);
+
    return (
       <div>
          <form
@@ -78,6 +79,7 @@ function AddCake() {
                e.preventDefault();
                addCakeMutation.mutate();
             }}
+            encType="multipart/form-data"
          >
             <h1 className="heading">Add cake</h1>
             <div className="field">
@@ -132,7 +134,9 @@ function AddCake() {
                   <h2 className="sub-heading">Select addons</h2>
                   {addOnChoices.map((addon: AddOn, index: number) => (
                      <div key={index} className="field checkbox">
-                        <label>{addon.name} @{addon.price}</label>
+                        <label>
+                           {addon.name} @{addon.price}
+                        </label>
                         <input
                            type="checkbox"
                            onClick={(e) => {
@@ -157,6 +161,18 @@ function AddCake() {
                   ))}
                </>
             ) : null}
+            <div className="field">
+               <label>Image</label>
+               <input
+                  type="file"
+                  onChange={(e) => {
+                     if (e.target.files) {
+                        setCakeImage(e.target.files[0] as Blob);
+                     }
+                  }}
+                  required
+               />
+            </div>
             <div className="actions">
                <button className="submit" type="submit">
                   Add cake

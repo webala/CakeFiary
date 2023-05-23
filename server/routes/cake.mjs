@@ -2,6 +2,7 @@
 
 import { Router } from "express";
 import cakeModel from "../models/cake.mjs";
+import { uploadImage } from "../firebase/index.mjs";
 
 const cakeRouter = Router();
 
@@ -16,13 +17,17 @@ cakeRouter.get("/", async (req, res) => {
 
 cakeRouter.post("/", async (req, res) => {
    const { name, flavours, price, availableAddons } = req.body;
-
+   const { cakeImage } = req.files;
+   console.log("file: ", cakeImage);
+   const downloadUrl = await uploadImage(cakeImage)
+   
    try {
       const newCake = await cakeModel.create({
          name,
          flavours,
          price,
-         availableAddons
+         availableAddons,
+         cakeImage: downloadUrl
       });
       const savedCake = await newCake.save();
       res.status(201).json(savedCake);

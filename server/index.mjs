@@ -6,6 +6,7 @@ import flavourRouter from './routes/flavour.mjs';
 import addOnRouter from './routes/addOn.mjs';
 import cakeRouter from './routes/cake.mjs';
 import cors from 'cors'
+import fileUpload from 'express-fileupload'
 
 
 dotenv.config()
@@ -19,6 +20,7 @@ app.use(cors());
 app.use(morgan('dev')) //Responsible for logging http requests
 app.use(express.json()) //Responsible for parsing requests with json payloads
 app.use(express.urlencoded()) // parses incoming requests with URL-encoded payloads
+app.use(fileUpload())
 
 
 
