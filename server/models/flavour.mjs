@@ -10,5 +10,5 @@ const flavourShema = new Schema({
    },
 });
 
-const flavourModel = mongoose.model("AddOn", flavourShema);
+const flavourModel = mongoose.model("Flavour", flavourShema);
 export default flavourModel;

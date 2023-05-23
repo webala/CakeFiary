@@ -14,5 +14,5 @@ const addOnShema = new Schema({
    },
 });
 
-const addOnModel = mongoose.model("AddOn", addOnShema);
+const addOnModel = mongoose.model("AddOns", addOnShema);
 export default addOnModel;
