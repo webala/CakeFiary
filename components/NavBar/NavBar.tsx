@@ -16,10 +16,9 @@ import {AiOutlineInfoCircle, AiOutlineHome} from 'react-icons/ai'
 // import CartDrawer from "../Cart/CartDrawer";
 import { useDisclosure } from "@chakra-ui/react";
 
-function NavBar() {
-	const btnRef = useRef<HTMLButtonElement>(null);
+function NavBar({onOpen}:{onOpen: () => void}) {
+	
 
-	const { onOpen, isOpen, onClose } = useDisclosure();
 	return (
 		<div className={style.navbar_container}>
 			<div className={style.navbar}>
@@ -45,7 +44,6 @@ function NavBar() {
 				</div>
 				<button
 					className={`${style.nav_item} group`}
-					ref={btnRef}
 					onClick={onOpen}
 				>
 					<p>Cart</p>

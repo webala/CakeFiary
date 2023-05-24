@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import style from '../Cart.module.scss'
-import {getCookie} from 'cookies-next'
+/** @format */
 
-function Cart({categories, flavours}: {categories: [], flavours: []}) {
+import React, { useState } from "react";
+import style from "../Cart.module.scss";
+import { useSelector } from "react-redux";
+import { GlobalState } from "../../../types";
 
-    const [orderItemsIds, setOrderItemsIds] = useState([])
-
-    
-    
-
-    
-
-  return (
-    <div className={style.cart}>
-        {/* {orderItemsIds.map((id, index) => {
-            const flavour = flavours.find((flavour) => flavour.id == id)
-            return (
-                // <h1>{flavour.name}</h1>
-            )
-        })} */}
-    </div>
-  )
+function Cart() {
+   const cartItems = useSelector((state: GlobalState) => state.cart.cartItems);
+   
+   return <div className={style.cart}></div>;
 }
 
-export default Cart
+export default Cart;
