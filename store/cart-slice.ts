@@ -39,7 +39,7 @@ const cartSlice = createSlice({
          const cartItem = state.cartItems.find((item) => item.id === id);
          if (cartItem) {
             const exists = cartItem.addOns.find(
-               (item) => item._id === addon.id
+               (item) => item._id === addon._id
             );
             if (exists) {
                const index = cartItem.addOns.indexOf(exists);

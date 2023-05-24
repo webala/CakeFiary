@@ -37,6 +37,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/redux-persist": "^4.3.1",
     "@types/uuid": "^9.0.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.19",
