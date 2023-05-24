@@ -4,15 +4,18 @@ import React from "react";
 import style from "./Menu.module.scss";
 import Image from "next/image";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import flavours from "../../data";
 import { useQuery } from "react-query";
 import { fetchCakes } from "../../utils";
 import { Spinner } from "@chakra-ui/react";
 import { Cake } from "../../types";
 import placeholder from "../../public/Cake.png";
 import { BsCartPlus } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
 
 function Menu() {
+   const dispatch = useDispatch();
+
    const {
       data: cakes,
       isLoading,
@@ -47,9 +50,6 @@ function Menu() {
 
                         <div className={style.name}>
                            <h1>{cake.name}</h1>
-                           <button>
-                              <BsCartPlus className={style.icon} />
-                           </button>
                         </div>
 
                         <p>
@@ -60,7 +60,13 @@ function Menu() {
                            animateIn="animate__heartBeat"
                            delay={1000}
                         >
-                           <button>Order now</button>
+                           <button
+                              onClick={() => {
+                                 dispatch(cartActions.addToCart({ cake }));
+                              }}
+                           >
+                              <BsCartPlus className={style.icon} />
+                           </button>
                         </AnimationOnScroll>
                      </div>
                   ))}

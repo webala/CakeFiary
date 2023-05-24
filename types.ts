@@ -21,6 +21,7 @@ export type Cake = {
 };
 
 export type CartItem = {
+   id: string;
    cake: Cake;
    addOns: AddOn[];
 };

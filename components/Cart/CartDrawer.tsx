@@ -23,7 +23,7 @@ function CartDrawer({ isOpen, onClose }: Props) {
             placement="right"
             onClose={onClose}
             finalFocusRef={btnRef}
-            size="md"
+            size="lg"
          >
             <DrawerOverlay />
             <DrawerContent>

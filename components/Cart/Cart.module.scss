@@ -1,3 +1,61 @@
+/** @format */
+
 .cart {
-    height: 100%;
+   // background: var(--bgSecondary);
+   .cartItems {
+      margin-top: 50px;
+      .cartItem {
+         border: 1px solid var(--bgPrimary);
+         margin-bottom: 20px;
+         padding: 20px 10px ;
+         border-radius: 15px;
+         position: relative;
+
+         .cake {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .image {
+               width: 50px;
+            }
+
+            h1,
+            p {
+               font-weight: 600;
+            }
+
+            .delete {
+                color: red;
+                font-size: 23px;
+            }
+         }
+
+         .addons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .list {
+               width: 70%;
+               h2 {
+                  font-weight: 500;
+               }
+
+               .addon {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+               }
+            }
+
+            .total {
+               p {
+                  font-weight: 700;
+                  color: var(--bgPrimary);
+               }
+            }
+         }
+      }
+   }
 }
