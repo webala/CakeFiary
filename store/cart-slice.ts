@@ -27,6 +27,26 @@ const cartSlice = createSlice({
             return;
          }
       },
+      addAddon(state, action) {
+         const { id, addon } = action.payload;
+         const cartItem = state.cartItems.find((item) => item.id === id);
+         if (cartItem) {
+            cartItem.addOns.push(addon);
+         }
+      },
+      removeAddOn(state, action) {
+         const { id, addon } = action.payload;
+         const cartItem = state.cartItems.find((item) => item.id === id);
+         if (cartItem) {
+            const exists = cartItem.addOns.find(
+               (item) => item._id === addon.id
+            );
+            if (exists) {
+               const index = cartItem.addOns.indexOf(exists);
+               cartItem.addOns.splice(index, 1);
+            }
+         }
+      },
    },
 });
 

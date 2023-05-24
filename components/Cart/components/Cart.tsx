@@ -49,13 +49,39 @@ function Cart() {
                               {" "}
                               <h2>Select add ons for this cake</h2>
                               {item.cake.availableAddons.map(
-                                 (addon: AddOn, index: number) => (
-                                    <div key={index} className={style.addon}>
-                                       <label>{addon.name}</label>
-                                       <p>@ ksh{addon.price}</p>
-                                       <input type="checkbox" />
-                                    </div>
-                                 )
+                                 (addon: AddOn, index: number) => {
+                                    const selected = item.addOns.find(
+                                       (addonItem) =>
+                                          addon._id === addonItem._id
+                                    );
+                                    return (
+                                       <div key={index} className={style.addon}>
+                                          <label>{addon.name}</label>
+                                          <p>@ ksh{addon.price}</p>
+                                          <input
+                                             type="checkbox"
+                                             checked={selected ? true : false}
+                                             onClick={() => {
+                                                if (selected) {
+                                                   dispatch(
+                                                      cartActions.removeAddOn({
+                                                         id: item.id,
+                                                         addon,
+                                                      })
+                                                   );
+                                                } else {
+                                                   dispatch(
+                                                      cartActions.addAddon({
+                                                         id: item.id,
+                                                         addon,
+                                                      })
+                                                   );
+                                                }
+                                             }}
+                                          />
+                                       </div>
+                                    );
+                                 }
                               )}
                            </div>
                         )}
