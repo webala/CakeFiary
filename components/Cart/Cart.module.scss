@@ -61,4 +61,22 @@
          }
       }
    }
+
+
+   .checkout {
+    background: white;
+    color: black;
+
+    .field {
+        input {
+            border: 1px solid gray;
+        }
+    }
+
+    .actions {
+        button {
+            color: white;
+        }
+    }
+   }
 }

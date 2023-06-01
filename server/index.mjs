@@ -29,7 +29,7 @@ app.use('/flavour', flavourRouter)
 app.use("/addon", addOnRouter);
 app.use("/cake", cakeRouter)
 
-const port = 8000
+const port = 7000
 
 app.listen(port, () => {
    console.log(`Server ready at ${port}`)

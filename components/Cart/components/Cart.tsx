@@ -99,6 +99,24 @@ function Cart() {
                <p>Nothing in your cart</p>
             </div>
          )}
+         <form className={style.checkout}>
+            <h1 className="heading">Checkout</h1>
+            <div className={`field ${style.field}`}>
+               <label>Full name</label>
+               <input type="text" required />
+            </div>
+            <div className={`field ${style.field}`}>
+               <label htmlFor="">Email</label>
+               <input type="email" required />
+            </div>
+            <div className={`field ${style.field}`}>
+               <label>Phone number</label>
+               <input type="text" required />
+            </div>
+            <div className={`actions ${style.actions}`}>
+               <button className="submit">Checkout</button>
+            </div>
+         </form>
       </div>
    );
 }
