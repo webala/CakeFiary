@@ -30,9 +30,16 @@ export type Cart = {
    cartItems: CartItem[];
 };
 
+type Client = {
+   phone: string;
+   name: string;
+   email: string;
+}
+
 export type Order = {
    _id?: string;
    orderItems: CartItem[];
+   client: Client
    booked: boolean;
    complete: boolean;
    delivery: boolean;

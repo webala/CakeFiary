@@ -3,7 +3,7 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-const cakeShema = new Schema({
+export const cakeShema = new Schema({
    name: {
       type: String,
       requered: true,

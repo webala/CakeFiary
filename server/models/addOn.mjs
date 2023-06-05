@@ -3,7 +3,7 @@
 import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
-const addOnShema = new Schema({
+export const addOnShema = new Schema({
    name: {
       type: String,
       requered: true,
